@@ -1,0 +1,24 @@
+Below the class Structure
+class Project
+{
+   // some project Information
+   
+}
+
+class Employee
+{
+
+
+}
+
+Map<Project,List<Employee>> projectInformation = new HashMap<>();
+
+Store employees based on Project as above and try to filterout following information 
+1) employees based on project and iterate Employees list like
+    doEmployeeIteration(List<Employee> empList)
+    {
+       // your code to iterate employee
+    }
+
+
+2) project information based on employee ID

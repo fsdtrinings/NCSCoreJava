@@ -21,7 +21,7 @@ public class StreamForEach {
 	PrintWriter pw = null;
 
 	public StreamForEach() {
-		String rootPath = "C:\\Users\\Hp\\Desktop\\NCS Singapore\\";
+		String rootPath = "C:\\Users\\dani_\\Downloads";
 		String fileName = "MyStreamAPI_FilterOutput.txt";
 		File f = new File(rootPath + fileName);
 
@@ -35,6 +35,7 @@ public class StreamForEach {
 
 			e.printStackTrace();
 		}
+		
 	}
 
 	public static void main(String[] args) {
@@ -49,13 +50,90 @@ public class StreamForEach {
 
 		obj.list = Arrays.asList(a1, a2, a3, a4, a5);
 
-		// obj.objective1(); // to call the forEach terminal operation
-		// obj.objective2();
-		// obj.objective3();
-		// obj.objective4();
+		obj.objective1(); // to call the forEach terminal operation
+		System.out.println("\n----------------------");
+		obj.objective2();
+		System.out.println("\n----------------------");
+		obj.objective3();
+		System.out.println("\n----------------------");
+		obj.objective4();
+		System.out.println("\n----------------------");
 		obj.objective5();
 
 	}
+	
+	public void objective1() {
+		list.stream().forEach(new Consumer<Account>() {
+
+			@Override
+			public void accept(Account t) {
+				System.out.println(t);
+
+			}
+
+		});
+		System.out.println("\n----------------------");
+		list.stream().forEach((a) -> System.out.println(a));
+
+	}
+	
+	public void objective2() {
+		/*
+		 * Account a = list.stream().min((a1,a2)->{ return a1.getBalance() -
+		 * a2.getBalance(); }).get();
+		 */
+		Account a = list.stream().min((a1, a2) -> a1.getBalance() - a2.getBalance()).get();
+		System.out.println(a);
+		System.out.println(list.stream().max((a1, a2) -> a1.getBalance() - a2.getBalance()).get());
+	}
+
+	public void objective3() {
+		/*
+		 * Stream.of(14,84,10,60,78,96,47,65,37).filter(new Predicate<Integer>() {
+		 * 
+		 * @Override public boolean test(Integer t) { if(t>50) { return true; } else
+		 * return false; }
+		 * 
+		 * }).forEach((x)->System.out.println(x));
+		 */
+
+		long count = list.stream().filter((a) -> {
+			// code to store this a in a file based on some criteria
+			if (a.getBalance() >= 4000) {
+				pw.print(a + "\n");
+				return true;
+			} else
+				return false;
+
+		}).count();
+		// to stroe output in different collection use collect
+		System.out.println("Filter output count :- " + count);
+
+		pw.close();
+	}
+	
+	public void objective4() {
+
+		List<Account> outputList = list.stream().filter((a) -> {
+
+			if (a.getBalance() >= 4000) {
+
+				return true;
+			} else
+				return false;
+
+		}).filter((a) -> {
+			if (a.getName().startsWith("B"))
+				return true;
+			else
+				return false;
+		}).collect(Collectors.toList());
+
+		outputList.stream().forEach((a) -> System.out.println(a));
+
+	}// end of objective 4
+
+
 
 	public void objective5()
 	{
@@ -90,7 +168,7 @@ public class StreamForEach {
 			else return false;
 		}).map((a)->{
 			int balance = a.getBalance();
-			a.setBalance(balance+=200);
+			a.setBalance(balance+200);
 			return a;
 		}).forEach((a)->System.out.println(a));
 		
@@ -98,74 +176,8 @@ public class StreamForEach {
 		
 	}// end of objective 5
 
-	public void objective4() {
+	
 
-		List<Account> outputList = list.stream().filter((a) -> {
-
-			if (a.getBalance() >= 4000) {
-
-				return true;
-			} else
-				return false;
-
-		}).filter((a) -> {
-			if (a.getName().startsWith("B"))
-				return true;
-			else
-				return false;
-		}).collect(Collectors.toList());
-
-		outputList.stream().forEach((a) -> System.out.println(a));
-
-	}// end of objective 4
-
-	public void objective3() {
-		/*
-		 * Stream.of(14,84,10,60,78,96,47,65,37).filter(new Predicate<Integer>() {
-		 * 
-		 * @Override public boolean test(Integer t) { if(t>50) { return true; } else
-		 * return false; }
-		 * 
-		 * }).forEach((x)->System.out.println(x));
-		 */
-
-		long count = list.stream().filter((a) -> {
-			// code to store this a in a file based on some criteria
-			if (a.getBalance() >= 4000) {
-				pw.print(a + "\n");
-				return true;
-			} else
-				return false;
-
-		}).count();
-		// to stroe output in different collection use collect
-		System.out.println("Filter output count :- " + count);
-
-		pw.close();
-	}
-
-	public void objective1() {
-		list.stream().forEach(new Consumer<Account>() {
-
-			@Override
-			public void accept(Account t) {
-				System.out.println(t);
-
-			}
-
-		});
-
-		list.stream().forEach((a) -> System.out.println(a));
-
-	}
-
-	public void objective2() {
-		/*
-		 * Account a = list.stream().min((a1,a2)->{ return a1.getBalance() -
-		 * a2.getBalance(); }).get();
-		 */
-		Account a = list.stream().min((a1, a2) -> a1.getBalance() - a2.getBalance()).get();
-		System.out.println(a);
-	}
-
+	
+	
 }// end class

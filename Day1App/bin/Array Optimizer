@@ -1,0 +1,81 @@
+package p3;
+
+import java.util.Scanner;
+
+public class ArraysOptimization {
+	Scanner sc = new Scanner(System.in);
+	int arr[] = {45,84,12,10,78,98,36,67,62,51,58,53,37,94,30,20,48,40,83,43,46,19,22};
+	
+	public static void main(String[] args) {
+			ArraysOptimization obj = new ArraysOptimization();
+			for (int x: obj.arr) {
+				System.out.print(x+",");
+			}
+			
+			//obj.approach1();
+			obj.approach2();
+	}
+	
+	public void approach1()
+	{
+		System.out.println("\n Enter Number to be searched :- ");
+		int searchNumber = sc.nextInt();
+		boolean isFound = false;
+		int iterationNumber = 0;
+		
+		for (int i : arr)
+		{
+			++iterationNumber;
+			if(i == searchNumber)
+			{
+				System.out.println(searchNumber+" found in "+iterationNumber+" Iteration");
+				isFound = true;
+				break;
+			}
+		}
+		
+		if(!isFound) System.out.println(searchNumber+" Not in the array ");
+	}
+
+	public void approach2()
+	{
+		System.out.println("\n Enter Number to be searched :- ");
+		int searchNumber = sc.nextInt();
+				
+		//===========================================================
+		boolean isFound = false;
+		int iterationNumber = 0;
+		int middle = arr.length/2;
+		int middleforward = middle; // middle forward use to iterate from middle to last
+		int middlePrevious = middle; // middle previous use to iterate from middle to start
+		
+    /* stop 1 and stop2 decides , when to break the loop*/
+		boolean stop1 = false;
+		boolean stop2 = false;
+		
+		for(int start=0,end = arr.length-1 ;true;start++,end--)
+		{
+			++iterationNumber;
+			if((arr[start] == searchNumber) || 
+			(arr[middlePrevious] == searchNumber)|| 
+			(arr[middleforward] == searchNumber) ||
+			(arr[end] == searchNumber))
+			{
+				isFound = true;
+				System.out.println(searchNumber+" found in "+iterationNumber+" Iteration");
+				break;
+				
+			}//end of if
+			middleforward++;
+			middlePrevious--;
+			
+			if(start == middlePrevious || start>middlePrevious) stop1 = true;
+			if(end == middleforward || end<middleforward) stop2 = true;
+			
+			if(stop1 && stop2) break;
+      
+		}//end of for
+	}//end of approach 2
+}//end class
+
+

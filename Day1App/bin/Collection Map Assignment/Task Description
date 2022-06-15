@@ -1,0 +1,2 @@
+Based on the given csv file (mapdemo.csv), generate the value of total order cost placed by each user (uniquely identified by userId).
+Constraint :- Use Map Collection 
