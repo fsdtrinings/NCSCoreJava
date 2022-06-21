@@ -11,8 +11,8 @@ public class MyPdfreader {
 		
 		try {
 			
-			String rootPath = "C:\\Users\\Hp\\Desktop\\NCS Singapore\\";
-			String fileName = "ncstoc.pdf";
+			String rootPath = "C:\\Users\\dani_\\Downloads\\Mid Term 17-Jun-22-20220617\\CoreJavaTest-main\\CaseStudy_CoreJava\\";
+			String fileName = "Order.csv";
 			
 			File f = new File(rootPath+fileName);
 			PDDocument myPdf = PDDocument.load(f);
