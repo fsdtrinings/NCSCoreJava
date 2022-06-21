@@ -1,0 +1,28 @@
+
+Create a Menu driven application to Book a ticket for a Match .
+following are the use cases to implements.
+
+Only admin user can access the application so all use are applicable to the admin only
+
+1) 
+Maximum 100 tickets can be sold online , 
+if admin try to sell more than 100 tickets , it should raise an Exception , OutOfTicketException.
+
+2) 
+admin has to Enter the Audiance entry .
+one booking can have maximum 6 audiance entry. if not exception should be raised
+while adding the Booking , record of Ticket should be saved in List and appropriate Ticket information should be generated in pdf format having following information
+
+-------------------------------------
+Ticket Number : 123
+Date of Booking : 16 June 2022
+Number of Seats : 3
+Booking Details 
+Seat Number 12  , Name : Mike
+Seat Number 13  , Name : Jenny
+Seat Number 14  , Name : Alisa
+------------------------------------
+
+3)
+admin can view all records or records by BookingId
+
