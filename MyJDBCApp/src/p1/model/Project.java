@@ -27,12 +27,6 @@ public class Project implements Serializable,Comparable<Project> {
 		this.comments = comments;
 		this.projectHeadEmail = projectHeadEmail;
 	}
-	public Project(int empId, String name, int salary) {
-		super();
-		this.projectNumber = empId;
-		this.projectName= name;
-		this.cost = salary;
-	}
 
 	public Project(int projectNumber, String projectName) {
 		super();

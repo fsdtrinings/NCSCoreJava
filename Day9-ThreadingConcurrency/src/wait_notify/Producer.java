@@ -17,14 +17,11 @@ public class Producer extends Thread
 		while(true)
 		{
 			p.doProduction(x++);
-
 			try {
 				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO: handle exception
 			}
-			
 		}
 		
 	

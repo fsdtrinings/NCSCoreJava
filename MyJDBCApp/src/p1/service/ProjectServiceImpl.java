@@ -24,14 +24,4 @@ public class ProjectServiceImpl implements ProjectService {
 		return projectDAO.getProjectById(projectNumber);
 	}
 
-
-
-	@Override
-	public boolean addProject(Project p) throws SQLException {
-		boolean status = projectDAO.addProject(p);
-		return status;
-	}
-	
-	
-
 }

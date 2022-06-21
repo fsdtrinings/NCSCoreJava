@@ -31,7 +31,7 @@ public class Demo2 {
 			System.out.println("Main :- "+i);
 			if(i == 5)
 			{
-				Thread.yield(); // or .join()
+				Thread.yield();
 			}
 			
 		}
