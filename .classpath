@@ -2,7 +2,12 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	<classpathentry excluding="Equals &amp; Hashset/|Has-A Relationship &amp; Interface Problem Statement/|Day3/src/|Day5/src/|Day2App/src/|Day1App/src/|Day8-InnerClasses/src/|StreamAPI-Day8/src/|EmployeeService With CustomException/|Day6-Collections/src/|Equals &amp; Hashset/p4/|Day4/src/|FileApp/src/" kind="src" path=""/>
+=======
+	<classpathentry excluding="Equals &amp; Hashset/|Has-A Relationship &amp; Interface Problem Statement/|Day3/src/|Day5/src/|Day2App/src/|Day1App/src/|Day8-InnerClasses/src/|StreamAPI-Day8/src/|MyJDBCApp/src/|EmployeeService With CustomException/|Day6-Collections/src/|Equals &amp; Hashset/p4/|Day4/src/|CaseStudy_TicketBooking/|FileApp/src/|Day9-ThreadingConcurrency/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="CaseStudy_TicketBooking"/>
+>>>>>>> Stashed changes
 =======
 	<classpathentry excluding="Equals &amp; Hashset/|Has-A Relationship &amp; Interface Problem Statement/|Day3/src/|Day5/src/|Day2App/src/|Day1App/src/|Day8-InnerClasses/src/|StreamAPI-Day8/src/|MyJDBCApp/src/|EmployeeService With CustomException/|Day6-Collections/src/|Equals &amp; Hashset/p4/|Day4/src/|CaseStudy_TicketBooking/|FileApp/src/|Day9-ThreadingConcurrency/src/" kind="src" path=""/>
 	<classpathentry kind="src" path="CaseStudy_TicketBooking"/>
@@ -15,6 +20,10 @@
 	<classpathentry kind="src" path="Day6-Collections/src"/>
 	<classpathentry kind="src" path="Day8-InnerClasses/src"/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+	<classpathentry kind="src" path="Day9-ThreadingConcurrency/src"/>
+>>>>>>> Stashed changes
 =======
 	<classpathentry kind="src" path="Day9-ThreadingConcurrency/src"/>
 >>>>>>> Stashed changes
@@ -24,6 +33,10 @@
 	<classpathentry kind="src" path="FileApp/src"/>
 	<classpathentry kind="src" path="Has-A Relationship &amp; Interface Problem Statement"/>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+	<classpathentry kind="src" path="MyJDBCApp/src"/>
+>>>>>>> Stashed changes
 =======
 	<classpathentry kind="src" path="MyJDBCApp/src"/>
 >>>>>>> Stashed changes
