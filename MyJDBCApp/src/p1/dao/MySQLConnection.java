@@ -18,7 +18,7 @@ public class MySQLConnection {
     		try {
 				
     			Class.forName("com.mysql.cj.jdbc.Driver");
-    			mySql = DriverManager.getConnection(url,"root","admin");
+    			mySql = DriverManager.getConnection(url,"root","root");
     	        System.out.println("MySQL Connection :- "+mySql);
     	        
 			} 

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry excluding="Equals &amp; Hashset/|Has-A Relationship &amp; Interface Problem Statement/|Day3/src/|Day5/src/|Day2App/src/|Day1App/src/|Day8-InnerClasses/src/|StreamAPI-Day8/src/|MyJDBCApp/src/|EmployeeService With CustomException/|Day6-Collections/src/|Equals &amp; Hashset/p4/|Day4/src/|CaseStudy_TicketBooking/|FileApp/src/|Day9-ThreadingConcurrency/src/" kind="src" path=""/>
+	<classpathentry kind="src" path="CaseStudy_TicketBooking"/>
+	<classpathentry kind="src" path="Day1App/src"/>
+	<classpathentry kind="src" path="Day2App/src"/>
+	<classpathentry kind="src" path="Day3/src"/>
+	<classpathentry kind="src" path="Day4/src"/>
+	<classpathentry kind="src" path="Day5/src"/>
+	<classpathentry kind="src" path="Day6-Collections/src"/>
+	<classpathentry kind="src" path="Day8-InnerClasses/src"/>
+	<classpathentry kind="src" path="Day9-ThreadingConcurrency/src"/>
+	<classpathentry kind="src" path="EmployeeService With CustomException"/>
+	<classpathentry excluding="p4/" kind="src" path="Equals &amp; Hashset"/>
+	<classpathentry kind="src" path="Equals &amp; Hashset/p4"/>
+	<classpathentry kind="src" path="FileApp/src"/>
+	<classpathentry kind="src" path="Has-A Relationship &amp; Interface Problem Statement"/>
+	<classpathentry kind="src" path="MyJDBCApp/src"/>
+	<classpathentry kind="src" path="StreamAPI-Day8/src"/>
+	<classpathentry kind="output" path="Day1App/bin"/>
+</classpath>

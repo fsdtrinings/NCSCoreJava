@@ -1,10 +1,10 @@
 package p1.ui;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 import p1.dto.EmployeeDTO;
-import p1.execptions.InvalidProjectIdException;
 import p1.model.Employee;
 import p1.model.Project;
 import p1.service.EmployeeService;
@@ -30,20 +30,12 @@ public class MainRunner {
 		
 		while(true)
 		{
-			System.out.println("\n\n ============== Link Panel =====================");
 			System.out.println("\n=======================================================");
 			System.out.println("1. Insert Employee ");
 			System.out.println("2. Add Project");
 			System.out.println("3. Add Project to Employee");
 			System.out.println("4. View All Employee");
 			System.out.println("5. View Employee By ID ");
-			System.out.println("6. Delete Project");
-			System.out.println("7. Add Project");
-			System.out.println("8. Projects, Employee Details"); // project Id , project Name , Employee Id, employee email
-			                                                     // Project Id , total Salary , 
-										// deleteEmployee
-										// insert employees in batch 	
-								// convert all DML queries in transactions
 			System.out.println("0. EXIT");
 			
 			System.out.println("\n Enter Ur Option :- ");
@@ -51,6 +43,12 @@ public class MainRunner {
 			
 			switch(userOption)
 			{
+				
+				case 4: app.viewAllEmployee();
+						break;
+				case 3: break;
+				case 2:	app.addProject();
+						break;
 				case 1:
 						app.saveEmployee();
 						break;
@@ -61,58 +59,52 @@ public class MainRunner {
 				case 5:
 					app.viewEmployeeetails();
 					break;
-				case 6: 
-					try {
-						app.doDeleteProject();
-						break;
-					} catch (Exception e) {
-						System.err.println("ERROR : - "+e);
-					}
-				case 7: 
-					app.addProject();break;
 			}
 			
 		}//end of while
 	}//end of main
 	
 	
-	private void addProject() {
+	private void viewAllEmployee() {
 		try {
+			List<Employee> list=empService.getAllEmploye();
+			System.out.println(list);
 			
-			Project p = new Project();
-			p.setProjectNumber(450);
-			p.setProjectName("test project");
-			p.setProjectHeadEmail("test@gmail.com");
-			
-			boolean status = projectService.addProkect(p);
-			System.out.println(status);
 		} 
+		
 		catch (SQLException e) {
-			System.out.println("Click the below and download the software update..");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		catch(InvalidProjectIdException e)
-		{
-			System.err.println("ERROR :- "+e);
-		}
-		
-		
 		
 	}
 
-	private void doDeleteProject()throws InvalidProjectIdException {
+	private void addProject() {
 		
-			System.out.println("Enter Project Number to be Deleted :- ");
-			int projectNumber = Integer.parseInt(sc.nextLine());
-			
-			if(projectNumber >50)
+		System.out.println("code");
+		int one = new Scanner(System.in).nextInt();
+		System.out.println("name");
+		String two = new Scanner(System.in).next();
+		System.out.println("cost");
+		int three = new Scanner(System.in).nextInt();
+		
+		Project p = new Project(one, two, three);
+		try {
+			boolean status=projectService.addProject(p);
+			if(status == true)
 			{
-				throw new InvalidProjectIdException(projectNumber+"");
-				
+				System.out.println(p.getProjectNumber()+" Saved in the Database "+p);
 			}
 			
-			boolean status = projectService.deleteProject(projectNumber);
-			System.out.println(status);
-
+			else
+			{
+				throw new Exception("Unknown SQL Exception ");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage()+"\n contact to customer care");
+			System.out.println("\n\n care@ncshr.com");
+		}
+		
 	}
 
 	public void viewEmployeeetails()
@@ -177,7 +169,14 @@ public class MainRunner {
 	{
 		// code to insert values for Employee
 		
-		Employee e = new Employee(209, "Dani", 2000);
+		System.out.println("code");
+		int one = new Scanner(System.in).nextInt();
+		System.out.println("name");
+		String two = new Scanner(System.in).next();
+		System.out.println("salary");
+		int three = new Scanner(System.in).nextInt();
+		
+		Employee e = new Employee(one, two, three);
 		try {
 			boolean status = empService.saveEmployee(e);
 			if(status == true)

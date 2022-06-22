@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 import p1.dao.ProjectDAO;
 import p1.dao.ProjectDAOImpl;
-import p1.execptions.InvalidProjectIdException;
 import p1.model.Project;
 
 public class ProjectServiceImpl implements ProjectService {
@@ -28,18 +27,10 @@ public class ProjectServiceImpl implements ProjectService {
 
 
 	@Override
-	public boolean deleteProject(int projectId) {
-		return projectDAO.deleteProject(projectId);
+	public boolean addProject(Project p) throws SQLException {
+		// TODO Auto-generated method stub
+		boolean status = projectDAO.addProject(p);
+		return status;
 	}
-
-
-
-	@Override
-	public boolean addProkect(Project p) throws SQLException, InvalidProjectIdException {
-		
-		return projectDAO.addProject(p);
-	}
-	
-	
 
 }
