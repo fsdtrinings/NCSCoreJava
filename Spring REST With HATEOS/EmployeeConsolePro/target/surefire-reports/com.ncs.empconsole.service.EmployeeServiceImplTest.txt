@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.ncs.empconsole.service.EmployeeServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 19.92 s <<< FAILURE! - in com.ncs.empconsole.service.EmployeeServiceImplTest
+testAddEmployee  Time elapsed: 1.109 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: com.ncs.empconsole.model.Employee@762d2e4c<links: []> but was: com.ncs.empconsole.model.Employee@22942eff<links: []>
+	at com.ncs.empconsole.service.EmployeeServiceImplTest.testAddEmployee(EmployeeServiceImplTest.java:79)
+

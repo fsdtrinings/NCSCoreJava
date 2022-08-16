@@ -1,0 +1,46 @@
+			List of End Point 
+    **************************************
+    
+POST Mapping 
+--------------
+
+add employee
+POST :  http://localhost:8081/empconsole/hr/employee
+
+
+add Department 
+POST : http://localhost:8081/empconsole/hr/department
+
+
+add Project 
+POST :- http://localhost:8081/empconsole/hr/project
+
+==========================================================================================
+
+PUT Mapping 
+-------------
+
+Update Project to add Employee 
+http://localhost:8081/empconsole/hr/project/{projectID}?empId={employeeID}
+
+Update Employee to add Department
+http://localhost:8081/empconsole/hr/employee/{empID}/department?dcode={dCode}
+
+==========================================================================================
+
+Read Data  (All GET Mapping)
+---------------------------------
+
+on Project 
+
+http://localhost:8081/empconsole/hr/project/{projectID}
+http://localhost:8081/empconsole/hr/project/{projectID}/employees
+
+on Department 
+http://localhost:8081/empconsole/hr/department/{dcode}
+
+on Employee
+http://localhost:8081/empconsole/hr/employee/id/{empID}
+http://localhost:8081/empconsole/hr/employees
+http://localhost:8081/empconsole/hr/employee?name={employeeName}
+
